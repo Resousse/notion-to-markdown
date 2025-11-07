@@ -6565,7 +6565,7 @@ const notionToMarkdown = new NotionToMarkdown({notionClient});
     if(typeof parent !== "undefined") {
       await fs.writeFile(`${baseName}.md`, parent);
     }
-    await new Promise(r => setTimeout(r, 500));
+    await new Promise(r => setTimeout(r, 1000));
   });
 })();
 
