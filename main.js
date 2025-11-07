@@ -4,12 +4,7 @@ const fs = require('fs').promises;
 
 const notionClient = new Client({ auth: process.env['INPUT_NOTION-TOKEN'] });
 
-const notionToMarkdown = new NotionToMarkdown({ 
-  notionClient: notionClient,
-    config:{
-     convertImagesToBase64: true
-  }
- });
+const notionToMarkdown = new NotionToMarkdown({notionClient});
 
 (async () => {
   const search = await notionClient.search({});
