@@ -1,4 +1,4 @@
-name: 'Notion to Markdown exporter with version upgraded'
+name: 'Notion to Markdown exporter'
 
 description: 'Export a Notion workspace to a set of Markdown files in the current working directory'
 
