@@ -7,7 +7,6 @@ const notionClient = new Client({ auth: process.env['INPUT_NOTION-TOKEN'] });
 const notionToMarkdown = new NotionToMarkdown({ 
   notionClient: notionClient,
     config:{
-     parseChildPages:false,
      convertImagesToBase64: true
   }
  });
