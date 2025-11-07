@@ -4,7 +4,13 @@ const fs = require('fs').promises;
 
 const notionClient = new Client({ auth: process.env['INPUT_NOTION-TOKEN'] });
 
-const notionToMarkdown = new NotionToMarkdown({ notionClient });
+const notionToMarkdown = new NotionToMarkdown({ 
+  notionClient: notionClient,
+    config:{
+     parseChildPages:false,
+     convertImagesToBase64: true
+  }
+ });
 
 (async () => {
   const search = await notionClient.search({});
@@ -19,5 +25,6 @@ const notionToMarkdown = new NotionToMarkdown({ notionClient });
     if(typeof parent !== "undefined") {
       await fs.writeFile(`${baseName}.md`, parent);
     }
+    await new Promise(r => setTimeout(r, 500));
   });
 })();
